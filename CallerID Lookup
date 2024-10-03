@@ -1,7 +1,7 @@
 import requests
 
 def lookup_phone_number(phone_number):
-    url = f"https://api.numlookupapi.com/v1/validate/+919603072060?apikey=num_live_UFLxidTfwBxxOokQRlL2kxkTksGFwvgjElAHnyfh"
+    url = f"https://api.numlookupapi.com/v1/validate/+91XXXXXXXXXX?apikey=num_live_UFLxidTfwBxxOokQRlL2kxkTksGFwvgjElAHnyfh"
     
     try:
         response = requests.get(url)

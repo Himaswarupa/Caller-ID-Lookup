@@ -1,0 +1,27 @@
+import requests
+
+def lookup_phone_number(phone_number):
+    url = f"https://api.numlookupapi.com/v1/validate/+919603072060?apikey=num_live_UFLxidTfwBxxOokQRlL2kxkTksGFwvgjElAHnyfh"
+    
+    try:
+        response = requests.get(url)
+        data = response.json()
+        
+        if data["valid"]:
+            print("Caller ID Information:")
+            print(f"Number: {data['number']}")
+            print(f"Country: {data['country_name']}")
+            print(f"Location: {data['location']}")
+            print(f"Carrier: {data['carrier']}")
+        else:
+            print("Invalid phone number.")
+    except requests.exceptions.RequestException as e:
+        print("Error connecting to API:", e)
+
+def main():
+    phone_number = input("Enter the phone number to lookup: ")
+    lookup_phone_number(phone_number)
+
+if __name__ == "__main__":
+    main()
+
